@@ -80,7 +80,7 @@ function commonResultHandler( err, res ) {
 
 // exampleTagSingleURL() shows how to request the tags for a single image URL
 function exampleTagSingleURL() {
-	var testImageURL = 'http://www.clarifai.com/img/metro-north.jpg';
+	var testImageURL = 'https://www.petfinder.com/wp-content/uploads/2012/11/99233806-bringing-home-new-cat-632x475.jpg';
 	var ourId = "train station 1"; // this is any string that identifies the image to your system
 
 	// Clarifai.setRequestTimeout( 100 ); // in ms - expect: force a timeout response
@@ -101,40 +101,8 @@ function exampleTagMultipleURL() {
 	Clarifai.tagURL( testImageURLs , ourIds, commonResultHandler ); 
 }
 
-// exampleFeedback() shows how to send feedback (add or remove tags) from 
-// a list of docids. Recall that the docid uniquely identifies an image previously
-// presented for tagging to one of the tag methods.
-function exampleFeedback() {
-// these are docids that just happen to be in the database right now. this test should get 
-// upgraded to tag images and use the returned docids.
-var docids = [
-	"15512461224882630000",
-	"9549283504682293000"
-	];
-	var addTags = [
-	"addTag1",
-	"addTag2"
-	];
-	Clarifai.feedbackAddTagsToDocids( docids, addTags, null, function( err, res ) {
-		if( opts["print-results"] ) {
-			console.log( res );
-		};
-	} );
-
-	var removeTags = [
-	"removeTag1",
-	"removeTag2"
-	];
-	Clarifai.feedbackRemoveTagsFromDocids( docids, removeTags, null, function( err, res ) {
-		if( opts["print-results"] ) {
-			console.log( res );
-		};
-	} );
-}
-
 
 exampleTagSingleURL();
-exampleTagMultipleURL();
-exampleFeedback();
+//exampleTagMultipleURL();
 
 Clarifai.clearThrottleHandler();
