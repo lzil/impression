@@ -13,3 +13,13 @@ a {
 .title {
 	margin: 20px
 }
+
+#title {
+	background-image: 'images/lelz.jpg';
+	background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+    height: 100%;
+    width:100%;
+}
