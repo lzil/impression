@@ -11,17 +11,13 @@ router.get('/test', function(req, res, next) {
   res.render('test', { title: 'Test Page' });
 });
 
-/* POST to addquiz. */
+/* POST to upload. */
 router.post('/upload', function (req, res) {
-
 	var db = req.db;
-
 	db.collection('music-files').insert(req.body, function (err, result) {
-
 		res.send(
 			(err === null) ? {msg: ''} : {msg: err}
 		);
-
 	});
 });
 
