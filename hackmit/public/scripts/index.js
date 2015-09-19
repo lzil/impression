@@ -1,16 +1,16 @@
 // DOM =========================================================
 $(document).ready(function () {
 
-    $('#uploadBtn').on('click', uploadFile);
+//    $('#uploadBtn').on('click', uploadFile);
 });
 
 // FUNCTIONS ===================================================
-function uploadFile (event) {
+/*function uploadFile (event) {
 
 	event.preventDefault();
     var files = $('#uploadBox').files;
     var musicFile = new FormData();
-    musicFile.append('fname', 'test.wav');
+    musicFile.append('filename', 'test.wav');
     musicFile.append('data', musicFile);
 
     $.ajax({
@@ -29,4 +29,4 @@ function uploadFile (event) {
             alert('Error: ' + response.msg);
         }
     });
-};
+};*/

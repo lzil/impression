@@ -5,6 +5,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var busboy = require('connect-busboy');
+var path = require('path');
+var fs = require('fs-extra'); 
 
 // Database
 var mongo = require('mongoskin');
@@ -30,6 +33,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// File stuff
+app.use(busboy());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -65,6 +71,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 module.exports = app;
