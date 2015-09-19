@@ -1,6 +1,7 @@
 body {
   padding: 0px;
   font: 'Raleway';
+  background-color: #222222;
 }
 
 a {
@@ -9,15 +10,15 @@ a {
 
 .search-div {
 	position: absolute;
-	top: 70%;
-	width:40%;
-	left: 30%;
+	top: 60%;
+	width:50%;
+	left: 25%;
 }
 
 #uploadBox {
 	border-top-left-radius:100px;
 	border-bottom-left-radius:100px;
-	background-color:#dddddd;
+	background-color:white;
 	opacity:0.6;
 }
 #uploadBtn {
@@ -27,7 +28,11 @@ a {
 	border-bottom-right-radius:20px;
 }
 .title {
-	margin: 20px
+	font-family:Open Sans;
+	margin: 20px;
+	color:white;
+	font-size: 40px;
+	letter-spacing: 2px;
 }
 
 #title {
@@ -36,6 +41,6 @@ a {
     background-size: cover;
     position: absolute;
     background-position: center center;
-    height: 60%;
+    height: 70%;
     width:100%;
 }
