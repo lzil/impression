@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  script(type='text/javascript' src='/scripts/index.js')
-  div(id="title")
+  script(type='text/javascript' src='/javascripts/index.js')
+  div(id="title-wrapper")
     div(class="search-div")
       h3(class="title text-center")= title
 
@@ -13,8 +13,26 @@ block content
           button(class="btn btn-default" type="button" id="uploadBtn")
             span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
 
+
+  div(id="icon-wrapper")
+    table(class='icon-table')
+      tr(class='title-icons')
+        td
+          i(class="fa fa-picture-o")
+        td
+          i(class="fa fa-upload")
+        td
+          i(class="fa fa-headphones")
+      tr(class='title-text')
+        td
+          omg find a kool pic
+        td
+          omg then upload da pic 2 dis kool website
+        td
+          omg now u get 2 listen 2 muzicz oOooOOooOOO~~
+
 //
-  script(type='text/javascript' src='/scripts/index.js')
+  script(type='text/javascript' src='/javascripts/index.js')
 
   div(class="container-fluid" id="title")
 

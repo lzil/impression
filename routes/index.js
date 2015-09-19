@@ -24,7 +24,7 @@ router.post('/upload', function (req, res, next) {
         req.pipe(req.busboy);
         req.busboy.on('file', function (fieldname, file) {
             console.log("Uploading: " + 'img.jpg');
-            fstream = fs.createWriteStream('./public/img/' + 'img.jpg');
+            fstream = fs.createWriteStream('./public/images/' + 'img.jpg');
             file.pipe(fstream);
             fstream.on('close', function () {    
                 console.log("Upload Finished of " + 'img.jpg');              
