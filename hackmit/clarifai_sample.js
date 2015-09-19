@@ -86,7 +86,7 @@ function exampleTagSingleURL() {
 	// Clarifai.setRequestTimeout( 100 ); // in ms - expect: force a timeout response
 	// Clarifai.setRequestTimeout( 100 ); // in ms - expect: ensure no timeout 
 
-	Clarifai.tagURL( testImageURL , ourId, commonResultHandler );
+	Clarifai.tagURL( testImageURL , ourId, function(err, res) {console.log(res)} );
 }
 
 

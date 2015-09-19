@@ -9,16 +9,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET test page. */
-router.get('/test', function (req, res, next) {
-	request.post(
-    'http://www.yoursite.com/formpage',
-    { form: { key: 'value' } },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body)
-        }
-    }
-);
+router.get('/test', function(req, res, next) {
 	res.render('test', { title: 'Test Page' });
 });
 
