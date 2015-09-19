@@ -1,3 +1,4 @@
+// General
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,6 +6,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// Database
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://impression:password@ds042698.mongolab.com:42698/impression', {native_parser:true});
+
+// Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
