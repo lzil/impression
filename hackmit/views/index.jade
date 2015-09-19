@@ -12,14 +12,13 @@ block content
 
         h3(class="title text-center")= title
 
-        div(class="input-group")
+        form(role="form", action="/upload", method="post", enctype="multipart/form-data")
+          input(type="file" name="testfile")
+          input(type="submit")
 
-          input(type="file" class="form-control" id="uploadBox" placeholder="Upload Music File...")
-          span(class="input-group-btn")
-            button(class="btn btn-default" type="button" id="uploadBtn")
-              span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
-      div(class="col-md-12")
+//          div(class="input-group")
 
-        h5(id="search-item") 
-
-        table(class="table table-hover" id="search-result")
+//            input(type="file" class="form-control" id="uploadBox" placeholder="Upload Music File...")
+//            span(class="input-group-btn")
+//              button(class="btn btn-default" type="button" id="uploadBtn")
+//                span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
