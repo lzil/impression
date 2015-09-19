@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 //var request = require('request');
-var Clarifai = require('./clarifai_node.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
