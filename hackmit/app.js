@@ -14,6 +14,10 @@ var db = mongo.db('mongodb://impression:password@ds042698.mongolab.com:42698/imp
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//Clarifai
+var Clarifai = require('./clarifai_node.js');
+Clarifai.initAPI("89yQDnMpTdF6VlNKDEzttY3ObL9xIiUYU1tZS1Z-", "AA6jlbyBXSfuw8y9cOoQYlfWNKvqf0g7GhjD-Ir5" );
+
 var app = express();
 
 // view engine setup
