@@ -1,5 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  script(type='text/javascript' src='/javascripts/search.js')
+
+  div(class="container")
+
+    div(class="row")
+
+      div(class="search-div col-md-6 col-md-offset-3")
+
+        h3(class="title text-center")= title
+
+        div(class="input-group")
+
+          input(type="text" class="form-control" id="searchBox" placeholder="Upload Music File")
+          span(class="input-group-btn")
+            button(class="btn btn-default" type="button" id="searchBtn")
+              span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
+              span(class="hover-on" style="display:none;") Advanced
+      div(class="col-md-12")
+
+        h5(id="search-item") 
+
+        table(class="table table-hover" id="search-result")
