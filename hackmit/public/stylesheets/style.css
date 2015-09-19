@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 'Raleway';
 }
 
@@ -8,18 +8,34 @@ a {
 }
 
 .search-div {
-	margin-top: 150px;
+	position: absolute;
+	top: 70%;
+	width:40%;
+	left: 30%;
+}
+
+#uploadBox {
+	border-top-left-radius:100px;
+	border-bottom-left-radius:100px;
+	background-color:#dddddd;
+	opacity:0.6;
+}
+#uploadBtn {
+	background-color:#cccccc;
+	opacity:0.8;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
 }
 .title {
 	margin: 20px
 }
 
 #title {
-	background-image: 'images/lelz.jpg';
+	background-image: url('../images/lelz.jpg');
 	background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: absolute;
     background-position: center center;
-    height: 100%;
+    height: 60%;
     width:100%;
 }
