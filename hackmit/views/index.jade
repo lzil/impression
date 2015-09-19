@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-  script(type='text/javascript' src='/javascripts/search.js')
+  script(type='text/javascript' src='/scripts/index.js')
 
   div(class="container")
 
@@ -14,11 +14,10 @@ block content
 
         div(class="input-group")
 
-          input(type="text" class="form-control" id="searchBox" placeholder="Upload Music File")
+          input(type="file" class="form-control" id="uploadBox" placeholder="Upload Music File...")
           span(class="input-group-btn")
-            button(class="btn btn-default" type="button" id="searchBtn")
+            button(class="btn btn-default" type="button" id="uploadBtn")
               span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
-              span(class="hover-on" style="display:none;") Advanced
       div(class="col-md-12")
 
         h5(id="search-item") 
