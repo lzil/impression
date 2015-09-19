@@ -1,10 +1,22 @@
 extends layout
 
 block content
+  script(type='text/javascript' src='/scripts/index.js')
+  div(id="title")
+    div(class="search-div")
+      h3(class="title text-center")= title
 
+      div(class="input-group")
+
+        input(type="file" class="form-control" id="uploadBox" placeholder="Upload Music File...")
+        span(class="input-group-btn")
+          button(class="btn btn-default" type="button" id="uploadBtn")
+            span(class="glyphicon glyphicon-cloud-upload hover-off" aria-hidden="true")
+
+//
   script(type='text/javascript' src='/scripts/index.js')
 
-  div(class="container")
+  div(class="container-fluid" id="title")
 
     div(class="row")
 
