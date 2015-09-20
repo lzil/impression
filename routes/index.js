@@ -28,6 +28,11 @@ router.get('/results', function(req, res, next) {
     
 });
 
+/* GET musictest page. */
+router.get('/musictest', function (req, res, next) {
+    res.render('musictest', { title: 'Music Test' });
+});
+
 
 /* POST to upload. */
 router.post('/upload', function (req, res, next) {
@@ -54,5 +59,6 @@ function clarifyCall() {
 
     clarifai.tagURL( testImageURL , ourId, function(err, res) {console.log(res.results[0].result.tag.classes)} );
 }
+
 
 module.exports = router;
