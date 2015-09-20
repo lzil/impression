@@ -104,7 +104,8 @@ a {
 	left: 20%;
 	width:60%;
 }
-.results-table {
+.resultsList {
+	font-size:14pt;
 }
 .result{
 	padding:10px;
@@ -128,4 +129,7 @@ a {
 .backbutton:hover {
 	color:#cccccc;
 	text-decoration: none;
+}
+.youtube {
+	font-size:10pt;
 }

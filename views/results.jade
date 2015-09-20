@@ -26,12 +26,17 @@ block content
           div(class='resultsList')
             img(src='/images/eternity.jpeg' class='song-image')
             br
-            | Title:
+            b
+              | Title:&nbsp;
             =val[0]
             br
-            | Artist:
+            b
+              | Artist:&nbsp;
             =val[1]
             br
+            div
+              a(style='color:#e52d27;font-size:20pt' href='https://www.youtube.com/results?search_query=' + val[0] + ' ' + val[1])
+                i(class="fa fa-youtube-play")
 
 
 
