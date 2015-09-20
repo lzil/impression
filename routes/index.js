@@ -18,8 +18,16 @@ router.get('/test', function(req, res, next) {
 });
 
 router.get('/results', function(req, res, next) {
-    clarifyCall();
-    res.render('results', { title: 'Impression', searchUrl: 'http://www.clarifai.com/img/metro-north.jpg'});
+    var testImageURL = 'much-impression.herokuapp.com/images/img.jpg';
+    console.log(testImageURL)
+    var ourId = "uploaded image";
+
+    clarifai.tagURL( testImageURL , ourId, function(err, res2) {
+        cResults = res2.results[0].result.tag.classes;
+        console.log(cResults)
+        res.render('results', { title: 'Impression', cResults: cResults, sResults: {'s1': {'title': 'etrnity', 'artist': 'vixx'}, 's2': {'title': 'lucifer', 'artist': 'exo'}}});
+    });
+    
 });
 
 /* GET musictest page. */
@@ -42,7 +50,7 @@ router.post('/upload', function (req, res, next) {
             file.pipe(fstream);
             fstream.on('close', function () {    
                 console.log("Upload Finished of " + 'img.jpg');              
-                res.redirect('back');
+                res.redirect('results')
             });
         });
 });
