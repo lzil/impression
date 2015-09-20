@@ -1,26 +1,32 @@
 // DOM =========================================================
 $(document).ready(function () {
 
-    $('#Btn').on('click', getTags);
+	$('#Btn').on('click', postTags);
 });
 
 // FUNCTIONS ===================================================
-function getTags( event ) {
+function postTags (event) {
 	event.preventDefault();
 
-	// $.ajax({
-	// 	type: 'GET',
-	// 	url: '/submit'
-	// }).done(function (response) {
-	// 	console.log(response);
-	// });
-	var mood = [['groovy', 2]];
+	var tags = ['child', 'girl', 'cake', 'laugh', 'dead'];
+
+//	$.ajax({
+//		type: 'POST',
+//		url: ajay's URL,
+//		data: 
+//	});
+	var response = ['groovy', 'happy', 'bouncy'];
+	var mood = [];
+	for (var i in response) {
+		mood.push([response[i], 3-i]);
+	};
+	var mood = [['groovy', 1.5],['happy', 1],['bouncy', 0.5]];
+///////////////////////////////////////////////////////////////////////
 	var url = 'http://developer.echonest.com/api/v4/song/search?';
 	for (var i = 0; i < mood.length; i++) {
 		url += 'mood=' + mood[i][0] + '^' + mood[i][1] + '&';
 	}
 	url = url.substring(0, url.length - 1);
-	console.log(url);
 	$.ajax({
 		type: 'GET',
 		url:url,
@@ -50,7 +56,6 @@ function getTags( event ) {
  					break;
  				}
  			}
- 			console.log(results);
  			for (var i in results) {
  				$('#results').append('<p>' + results[i] + '</p>');
  			}

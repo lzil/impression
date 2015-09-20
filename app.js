@@ -7,19 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var busboy = require('connect-busboy');
 var path = require('path');
-var fs = require('fs-extra'); 
-
-// Database
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://impression:password@ds042698.mongolab.com:42698/impression', {native_parser:true});
 
 // Routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
-
-//Clarifai
-var Clarifai = require('./clarifai_node.js');
-Clarifai.initAPI("89yQDnMpTdF6VlNKDEzttY3ObL9xIiUYU1tZS1Z-", "AA6jlbyBXSfuw8y9cOoQYlfWNKvqf0g7GhjD-Ir5" );
 
 var app = express();
 
@@ -39,7 +29,6 @@ app.use(busboy());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,7 +60,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
 
 module.exports = app;
