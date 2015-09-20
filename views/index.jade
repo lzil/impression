@@ -6,16 +6,20 @@ block content
     div(class="search-div")
       h3(class="title text-center")= title
       br
-      div(class="input-group")
+      
 
-        span(class="input-group-btn")
-          button(class="btn btn-default" type="button" id="uploadBtn")
-            i(class="fa fa-upload")
-        input(class="form-control" id="uploadBox" placeholder="Click the button on the left to upload an image!" disabled)
-        span(class="input-group-btn")
-          button(class="btn btn-default" type="button" id="searchBtn" disabled)
-            i(class="fa fa-search")
-        
+      form(role="form", action="/upload", method="post", enctype="multipart/form-data")
+        div(class="input-group")
+          span(class="input-group-btn")
+            input(type='file' name="testfile" id='invisiload' style='display:inline' )
+            button(class="btn btn-default" style='display:inline' type="button" id="uploadBtn")
+              i(class="fa fa-upload")
+          input(class="form-control" style='display:inline' id="uploadBox" placeholder="Click the button on the left to upload an image!" disabled)
+          //span(class="input-group-btn" id="uploadBox" placeholder="Click the button on the left to upload an image!" )
+          span(class="input-group-btn" id='searchSpan')
+            button(class="btn btn-default" type="submit" id="searchBtn" disabled)
+              i(class="fa fa-search")
+          
 
 
   div(id="icon-wrapper")

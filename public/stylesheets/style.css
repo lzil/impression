@@ -20,12 +20,18 @@ a {
 	margin:auto;
 	text-align:center;
 }
+
 #uploadBox {
 	background-color:white;
 	opacity:0.6;
 	cursor:default;
+	margin-left:-36px;
+	width: calc(100% + 36px);
+}
+.input-group-btn {
 }
 #uploadBtn {
+	outline:none;
 	background-color:white;
 	opacity:0.5;
 	width:80px;
@@ -39,8 +45,16 @@ a {
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 }
+#searchSpan {
+	cursor:not-allowed;
+}
 #uploadBtn:hover {
 	opacity:0.8;
+}
+#invisiload {
+	visibility:hidden;
+	display:none;
+	width:0;
 }
 .title {
 	font-family:Open Sans;

@@ -1,12 +1,21 @@
 // DOM =========================================================
 $(document).ready(function () {
 
-//    $('#uploadBtn').on('click', uploadFile);
+    $('#uploadBtn').on('click', function() {
+        document.getElementById('searchBtn').disabled = false;
+        $('#searchSpan').css('cursor', 'pointer');
+        $('#searchBtn').css({'opacity': '0.8'});
+    });
+});
+
+$(function(){
+    $('#uploadBtn').click(function(){
+        $('#invisiload').click();
+    });
 });
 
 // FUNCTIONS ===================================================
 /*function uploadFile (event) {
-
 	event.preventDefault();
     var files = $('#uploadBox').files;
     var musicFile = new FormData();
@@ -29,4 +38,5 @@ $(document).ready(function () {
             alert('Error: ' + response.msg);
         }
     });
-};*/
+};
+*/
