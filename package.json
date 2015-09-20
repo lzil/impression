@@ -7,15 +7,19 @@
   },
   "dependencies": {
     "body-parser": "~1.13.2",
+    "connect-busboy": "*",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "fs-extra": "*",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "stdio": "^0.2.7",
     "connect-busboy": "*",
+    "morgan": "~1.6.1",
     "path": "*",
-    "fs-extra": "*"
+    "serve-favicon": "~2.3.0",
+    "stdio": "^0.2.7"
   }
 }
