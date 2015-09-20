@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	results = document.getElementsByClassName("resultsList");
-	resultsTable = document.getElementsByClassName('results-table');
+	resultsTable = document.getElementsByClassName('result');
 
 	for (i = 0; i < results.length; i++) {
 		results[i].id = 'result' + i;
-
+		resultsTable[i].id = 'resulT' + i;
 		if (i != 0) {
 			$(results[i]).css('display', 'none')
 		}
@@ -28,11 +28,11 @@ $(document).ready(function(){
 		}
 	})
 
-	$('.result').on('click', function(event) {
+	$('results-table div').on('click', function(event) {
 		if (this != clicked) {
 			console.log($(this))
-			var numThis = $(this).attr('id').substring(6, 1)
-			var numClicked = $(clicked).attr('id').substring(6, 1)
+			var numThis = $(this).id.substring(6, 1)
+			var numClicked = $(clicked).id.substring(6, 1)
 			$("#result"+numClicked).css('display', 'none');
 			$("#result"+numThis).css('display', "block");
 			$(clicked).css({'border':0, 'font-weight': 'normal', 'background-color':'#222222', 'padding-left': '10px'})
