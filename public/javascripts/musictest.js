@@ -53,12 +53,38 @@ function postTags (event) {
  				song_names.push(song['title'].toLowerCase());
  				artist_names.push(song['artist_name'].toLowerCase());
  				results.push([song['title'], song['artist_name']]);
- 				if (song_names.length == 10) {
+ 				if (song_names.length == 5) {
  					break;
  				}
  			}
+ 			var final_results = [];
  			for (var i in results) {
- 				$('#results').append('<p>' + results[i] + '</p>');
- 			}
+ 				var url = 'https://itunes.apple.com/search?term='
+ 				var search_terms = results[i][0].split(" ").concat(results[i][1].split(" "));
+ 				console.log(search_terms);
+ 				for (var j in search_terms) {
+ 					url += search_terms[j] + "+";
+ 				}
+				url = url.substring(0, url.length - 1);
+ 				$.ajax({ 
+					url: url,
+					type: 'GET',
+					dataType: 'jsonp'
+ 				}).success(function(response) {
+ 					var result = response['results'][0];
+ 					var album_name = result['collectionName'];
+ 					var image_url = result['artworkUrl100'];
+ 					image_url = image_url.substring(0, image_url.length-16) + "400x400bb-85.jpg";
+ 					final_results.push([result['trackName'], result['artistName'], album_name, image_url]);
+ 					console.log(album_name);
+ 					console.log(image_url);
+ 					if (final_results.length === song_names.length) {
+ 						console.log(final_results);
+ 						for (var i in final_results) {
+ 							$('#results').append('<p>' + final_results[i] + '</p>');
+ 						}
+ 					}
+ 				});
+ 			} 			
 		});
 }
