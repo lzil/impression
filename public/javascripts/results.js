@@ -8,7 +8,6 @@ $(document).ready(function(){
 	};
 	query = query.substr(0,query.length-1);
 	convertTags();
-	alert(query);
 
 	setTimeout(function(){
 		console.log(final_results);
