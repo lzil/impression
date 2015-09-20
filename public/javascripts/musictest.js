@@ -11,10 +11,10 @@ function postTags (event) {
 	var a = ['derp'];
 
 	$.ajax({
-        type: 'POST',
-        url: 'http://ancient-island-4243.herokuapp.com/',
-        data: ['mountain','snowy','happy','high','calm'],
-        dataType: 'json'
+        url: 'https://ancient-island-4243.herokuapp.com/',
+        type: 'GET',
+        dataType: 'jsonp',
+        data: 'mountain&snowy&happy&high&calm'
     }).done(function (response) {
             a = response;
             console.log(response);
