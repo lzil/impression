@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div(class='results-wrapper container-fluid')
+    div(class='col-md-12')
+      h1 Here's your playlist:
+    div(class='row')
+      div(class='results-table col-md-6')
+        each val in [1, 2, 3, 4, 5]
+          div(class='row result')
+            =val
+      div(class='song-details col-md-6')
+        img(src='/images/eternity.jpeg' class='song-image')
+
+
+
+  div(id="icon-wrapper")
