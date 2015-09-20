@@ -1,32 +1,33 @@
 // DOM =========================================================
 $(document).ready(function () {
 
-	$('#Btn').on('click', postTags);
+	$('#Btn').on('click', convertTags);
 });
 
 // FUNCTIONS ===================================================
-function postTags (event) {
+function convertTags (event) {
 	event.preventDefault();
-
-	var a = ['derp'];
 
 	$.ajax({
         url: 'https://ancient-island-4243.herokuapp.com/mountain&snowy&happy&high&calm',
         type: 'GET',
         dataType: 'json',
-    }).done(function (response) {
-            a = response;
-            console.log(response);
+    }).done(function (res) {
+
+            convertMood(res);
+
         });
-	var response = ['groovy', 'happy', 'bouncy'];
+};
+
+function convertMood (res) {
 	var mood = [];
-	for (var i in response) {
-		mood.push([response[i], 3-i]);
+	for (var i in res) {
+		mood.push([a[i], 3-i]);
 	};
 	var url = 'http://developer.echonest.com/api/v4/song/search?';
 	for (var i = 0; i < mood.length; i++) {
 		url += 'mood=' + mood[i] + '&';
-	}
+	};
 	url = url.substring(0, url.length - 1);
 	$.ajax({
 		type: 'GET',
@@ -37,7 +38,13 @@ function postTags (event) {
  			'artist_min_familiarity': 0.7,
  			'sort': 'song_hotttnesss-desc'
  		}
- 		}).done(function (response) {
+ 	}).done(function (res) {
+
+ 		sortSongs(res);
+ 	};
+};
+
+		function (response) {
  			var songs = response['response']['songs'];
  			var song_names = [];
  			var artist_names = [];
