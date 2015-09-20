@@ -2,13 +2,13 @@ extends layout
 
 block content
   script(type='text/javascript' src='/javascripts/results.js')
+  div(style='padding:15px')
+    a(href='/' class='backbutton')
+      i(class="fa fa-chevron-circle-left")
+      &nbsp;back to search
   div(class='results-wrapper container-fluid')
     div(class='col-md-12 result-title')
       h1 Here's your playlist:
-      h4
-        | &nbsp;
-        i(class="fa fa-chevron-circle-left")
-        |  back to homepage
     div(class='row')
       div(class='results-table col-md-6')
         each val, index in cResults
