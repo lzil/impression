@@ -110,6 +110,7 @@ a {
 	padding:10px;
 	font-size:20px;
 	border:0px white solid;
+	cursor:pointer;
 }
 
 .song-details {

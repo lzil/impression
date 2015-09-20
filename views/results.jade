@@ -11,17 +11,27 @@ block content
       h1 Here's your playlist:
     div(class='row')
       div(class='results-table col-md-6')
-        each val, index in cResults
+        span(class='invis' style='display:none')
+        each val, index in sResults
           div(class='row result')
             div(class='col-md-1')
               =index + 1
               | .
             div(class='col-md-5')
-              =val
+              =val[0]
+              | &nbsp;-&nbsp;
+              =val[1]
       div(class='song-details col-md-6')
-        img(src='/images/eternity.jpeg' class='song-image')
-        span Title:
-        span =
+        each val, index in sResults
+          div(class='resultsList')
+            img(src='/images/eternity.jpeg' class='song-image')
+            br
+            | Title:
+            =val[0]
+            br
+            | Artist:
+            =val[1]
+            br
 
 
 
