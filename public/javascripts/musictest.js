@@ -14,10 +14,10 @@ function getTags( event ) {
 	// }).done(function (response) {
 	// 	console.log(response);
 	// });
-	var mood = [['groovy', 2]];
+	var mood = ['happy', 'fun'];
 	var url = 'http://developer.echonest.com/api/v4/song/search?';
 	for (var i = 0; i < mood.length; i++) {
-		url += 'mood=' + mood[i][0] + '^' + mood[i][1] + '&';
+		url += 'mood=' + mood[i] + '&';
 	}
 	url = url.substring(0, url.length - 1);
 	console.log(url);
