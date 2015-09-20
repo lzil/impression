@@ -13,6 +13,10 @@ router.get('/test', function(req, res, next) {
 	res.render('test', { title: 'Test Page' });
 });
 
+router.get('/results', function(req, res, next) {
+    res.render('results', { title: 'Impression', searchUrl: 'http://www.clarifai.com/img/metro-north.jpg'});
+});
+
 
 /* POST to upload. */
 router.post('/upload', function (req, res, next) {
