@@ -11,10 +11,9 @@ function postTags (event) {
 	var a = ['derp'];
 
 	$.ajax({
-        url: 'https://ancient-island-4243.herokuapp.com/',
+        url: 'https://ancient-island-4243.herokuapp.com/mountain&snowy&happy&high&calm',
         type: 'GET',
-        dataType: 'jsonp',
-        data: 'mountain&snowy&happy&high&calm'
+        dataType: 'json',
     }).done(function (response) {
             a = response;
             console.log(response);
