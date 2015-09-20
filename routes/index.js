@@ -42,7 +42,6 @@ router.get('/results', function (req, res, next) {
             title: 'Impression',
             cResults: cResults
         };
-        console.log(cResults);
         res.render('results', data);
     });
 });
