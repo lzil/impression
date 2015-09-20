@@ -41,16 +41,7 @@ router.get('/results', function (req, res, next) {
         var data = {
             title: 'Impression',
             cResults: cResults,
-            sResults: {
-                's1': {
-                    'title': 'etrnity',
-                    'artist': 'vixx'
-                },
-                's2': {
-                    'title': 'lucifer',
-                    'artist': 'exo'
-                }
-            }
+            sResults: [['etrnity', 'vixx'],['lucifer', 'shinee']]
         };
         res.render('results', data);
     });
