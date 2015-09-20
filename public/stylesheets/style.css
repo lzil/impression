@@ -96,6 +96,7 @@ a {
 .title-text td{
 	vertical-align: top;
 	padding-top:20px;
+	padding:0px 150px;
 }
 
 .results-wrapper {
