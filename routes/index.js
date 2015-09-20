@@ -23,7 +23,7 @@ router.get('/results', function(req, res, next) {
     console.log(imageurl)
     var ourId = "uploaded image";
 
-    clarifai.tagURL( testImageURL , ourId, function(err, res2) {
+    clarifai.tagURL( imageurl , ourId, function(err, res2) {
         cResults = res2.results[0].result.tag.classes;
         console.log(cResults)
         res.render('results', { title: 'Impression', cResults: cResults, sResults: {'s1': {'title': 'etrnity', 'artist': 'vixx'}, 's2': {'title': 'lucifer', 'artist': 'exo'}}});
