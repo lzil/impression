@@ -52,7 +52,9 @@ router.get('/results', function (req, res, next) {
                 }
             }
         };
-        res.render('results', data);
+        var stringData = JSON.stringify(cResults);
+        var pkg = encodeURIComponent(stringData);
+        res.redirect('/musictest?valid=' + pkg);
     });
 });
 
@@ -64,6 +66,13 @@ router.get('/test', function (req, res, next) {
 /* GET musictest page. */
 router.get('/musictest', function (req, res, next) {
     res.render('musictest', { title: 'Music Test' });
+    var tags = decodeURIComponent(req.query.valid);
+    
 });
+
+/* POST to Django website */
+router.post('http://ancient-island-4243.herokuapp.com/', function(req, res, next){
+    
+})
 
 module.exports = router;

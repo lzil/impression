@@ -8,13 +8,17 @@ $(document).ready(function () {
 function postTags (event) {
 	event.preventDefault();
 
-	var tags = ['child', 'girl', 'cake', 'laugh', 'dead'];
+	var a = ['derp'];
 
-//	$.ajax({
-//		type: 'POST',
-//		url: ajay's URL,
-//		data: 
-//	});
+	$.ajax({
+        type: 'POST',
+        url: 'http://ancient-island-4243.herokuapp.com/',
+        data: ['mountain','snowy','happy','high','calm'],
+        dataType: 'json'
+    }).done(function (response) {
+            a = response;
+            console.log(response);
+        });
 	var response = ['groovy', 'happy', 'bouncy'];
 	var mood = [];
 	for (var i in response) {
