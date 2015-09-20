@@ -37,11 +37,12 @@ router.get('/results', function (req, res, next) {
     var ourId = "uploaded image";
     clarifai.tagURL( imageurl , ourId, function (err, res2) {
         cResults = res2.results[0].result.tag.classes;
+        console.log(cResults);
         var data = {
             title: 'Impression',
-            cResults: cResults,
-            sResults: [['eternit', 'vixx'], ['lucifer', 'shinee']]
+            cResults: cResults
         };
+        console.log(cResults);
         res.render('results', data);
     });
 });
