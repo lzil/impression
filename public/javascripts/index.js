@@ -1,8 +1,6 @@
 // DOM =========================================================
 $(document).ready(function () {
-
     $('#uploadBtn').on('click', function() {
-        
         $('#invisiload').change(function() {
             document.getElementById('searchBtn').disabled = false;
             $('#searchSpan').css('cursor', 'pointer');

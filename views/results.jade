@@ -6,9 +6,9 @@ block content
       h1 Here's your playlist:
     div(class='row')
       div(class='results-table col-md-6')
-        each val in sResults
+        each val in cResults
           div(class='row result')
-            =val.title
+            =val
       div(class='song-details col-md-6')
         img(src='/images/eternity.jpeg' class='song-image')
         span Title:
