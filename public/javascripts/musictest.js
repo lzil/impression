@@ -8,7 +8,6 @@ $(document).ready(function () {
 function postTags (event) {
 	event.preventDefault();
 
-<<<<<<< HEAD
 	var tags = ['child', 'girl', 'cake', 'laugh', 'dead'];
 
 //	$.ajax({
