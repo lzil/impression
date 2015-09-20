@@ -3,16 +3,25 @@ extends layout
 block content
   script(type='text/javascript' src='/javascripts/results.js')
   div(class='results-wrapper container-fluid')
-    div(class='col-md-12')
+    div(class='col-md-12 result-title')
       h1 Here's your playlist:
+      h4
+        | &nbsp;
+        i(class="fa fa-chevron-circle-left")
+        |  back to homepage
     div(class='row')
       div(class='results-table col-md-6')
-        each val in cResults
+        each val, index in cResults
           div(class='row result')
-            =val
+            div(class='col-md-1')
+              =index + 1
+              | .
+            div(class='col-md-5')
+              =val
       div(class='song-details col-md-6')
         img(src='/images/eternity.jpeg' class='song-image')
-        span
+        span Title:
+        span =
 
 
 
