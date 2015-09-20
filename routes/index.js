@@ -19,7 +19,7 @@ router.get('/test', function(req, res, next) {
 
 router.get('/results', function(req, res, next) {
     //var testImageURL = 'much-impression.herokuapp.com/images`/img.jpg';
-    var testimageurl = 'http://shoot4stars.herokuapp.com/images/lastpage.png'
+    var imageurl = 'http://shoot4stars.herokuapp.com/images/lastpage.png'
     console.log(imageurl)
     var ourId = "uploaded image";
 
