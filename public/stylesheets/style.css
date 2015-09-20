@@ -12,28 +12,44 @@ a {
 .search-div {
 	position: absolute;
 	top: 60%;
-	width:50%;
-	left: 25%;
+	margin:auto;
+	width:100%;
 }
-
+.input-group {
+	max-width:50%;
+	margin:auto;
+	text-align:center;
+}
 #uploadBox {
-	border-top-left-radius:100px;
-	border-bottom-left-radius:100px;
 	background-color:white;
 	opacity:0.6;
+	cursor:default;
 }
 #uploadBtn {
-	background-color:#cccccc;
-	opacity:0.8;
+	background-color:white;
+	opacity:0.5;
+	width:80px;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+}
+#searchBtn {
+	background-color:white;
+	opacity:0.3;
+	width:100px;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
+}
+#uploadBtn:hover {
+	opacity:0.8;
 }
 .title {
 	font-family:Open Sans;
 	margin: 20px;
 	color:white;
-	font-size: 60px;
+	font-size: 80px;
 	letter-spacing: 4px;
+	-webkit-filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.8));
+  	filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.8));
 }
 
 #title-wrapper {
@@ -58,10 +74,10 @@ a {
 	text-align:center;
 }
 .title-icons td {
-	font-size: 100px;
+	font-size: 80px;
 	width: 30%;
 	height:20%;
-	padding-top:40px;
+	padding-top:60px;
 }
 .title-text td{
 	vertical-align: top;

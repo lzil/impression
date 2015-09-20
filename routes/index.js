@@ -18,8 +18,14 @@ router.get('/test', function(req, res, next) {
 });
 
 router.get('/results', function(req, res, next) {
-    clarifyCall();
-    res.render('results', { title: 'Impression', searchUrl: 'http://www.clarifai.com/img/metro-north.jpg'});
+    var testImageURL = 'https://www.petfinder.com/wp-content/uploads/2012/11/99233806-bringing-home-new-cat-632x475.jpg';
+    var ourId = "train station 1"; // this is any string that identifies the image to your system
+
+    clarifai.tagURL( testImageURL , ourId, function(err, res2) {
+        console.log(res2.results[0].result.tag.classes)
+        res.render('results', { title: 'Impression', cResults: res2.results[0].result.tag.classes});
+    });
+    
 });
 
 
