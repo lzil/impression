@@ -28,12 +28,14 @@ $(document).ready(function(){
 		}
 	})
 
-	$('results-table div').on('click', function(event) {
+	$('.result').on('click', function(event) {
 		if (this != clicked) {
-			console.log($(this))
-			var numThis = $(this).id.substring(6, 1)
-			var numClicked = $(clicked).id.substring(6, 1)
-			$("#result"+numClicked).css('display', 'none');
+			console.log($(this)[0])
+			var numThis = $(this)[0].id.substring(6, 7)
+			console.log(numThis)
+			for (i = 0; i < results.length; i++) {
+				$("#result"+i).css('display', 'none');
+			}
 			$("#result"+numThis).css('display', "block");
 			$(clicked).css({'border':0, 'font-weight': 'normal', 'background-color':'#222222', 'padding-left': '10px'})
 			clicked = this;

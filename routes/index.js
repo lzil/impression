@@ -33,7 +33,6 @@ router.post('/upload', function (req, res, next) {
 
 /* GET results page */
 router.get('/results', function (req, res, next) {
-    
     var imageurl = 'http://much-impression.herokuapp.com/images/img.jpg';
     var ourId = "uploaded image";
     clarifai.tagURL( imageurl , ourId, function (err, res2) {
@@ -41,8 +40,9 @@ router.get('/results', function (req, res, next) {
         var data = {
             title: 'Impression',
             cResults: cResults,
+            sResults: [['eternit', 'vixx'], ['lucifer', 'shinee']]
         };
-        res.render('results');
+        res.render('results', data);
     });
 });
 
