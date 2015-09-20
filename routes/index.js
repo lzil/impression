@@ -22,8 +22,8 @@ router.get('/results', function(req, res, next) {
     var ourId = "train station 1"; // this is any string that identifies the image to your system
 
     clarifai.tagURL( testImageURL , ourId, function(err, res2) {
-        console.log(res2.results[0].result.tag.classes)
-        res.render('results', { title: 'Impression', cResults: res2.results[0].result.tag.classes});
+        cResults = res2.results[0].result.tag.classes;
+        res.render('results', { title: 'Impression', sResults: {'s1': {'title': 'etrnity', 'artist': 'vixx'}, 's2': {'title': 'lucifer', 'artist': 'exo'}}});
     });
     
 });

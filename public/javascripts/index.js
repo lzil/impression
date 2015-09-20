@@ -2,9 +2,15 @@
 $(document).ready(function () {
 
     $('#uploadBtn').on('click', function() {
-        document.getElementById('searchBtn').disabled = false;
-        $('#searchSpan').css('cursor', 'pointer');
-        $('#searchBtn').css({'opacity': '0.8'});
+        
+        $('#invisiload').change(function() {
+            document.getElementById('searchBtn').disabled = false;
+            $('#searchSpan').css('cursor', 'pointer');
+            var filename = $('#invisiload').val();
+            $('#uploadBox').val(filename.replace("C:\\fakepath\\", ""));
+            $('#searchBtn').css({'opacity': '0.8'});
+        });
+        
     });
 });
 
