@@ -8,6 +8,7 @@ $(document).ready(function () {
 function postTags (event) {
 	event.preventDefault();
 
+<<<<<<< HEAD
 	var tags = ['child', 'girl', 'cake', 'laugh', 'dead'];
 
 //	$.ajax({
@@ -20,11 +21,9 @@ function postTags (event) {
 	for (var i in response) {
 		mood.push([response[i], 3-i]);
 	};
-	var mood = [['groovy', 1.5],['happy', 1],['bouncy', 0.5]];
-///////////////////////////////////////////////////////////////////////
 	var url = 'http://developer.echonest.com/api/v4/song/search?';
 	for (var i = 0; i < mood.length; i++) {
-		url += 'mood=' + mood[i][0] + '^' + mood[i][1] + '&';
+		url += 'mood=' + mood[i] + '&';
 	}
 	url = url.substring(0, url.length - 1);
 	$.ajax({
